@@ -1,24 +1,10 @@
-const character = "#";
-const count = 8;
-const rows = [];
-let inverted = true;
-
-function padRow(rowNumber, rowCount) {
-  return " ".repeat(rowCount - rowNumber) + character.repeat(2 * rowNumber - 1) + " ".repeat(rowCount - rowNumber);
-}
-
-for (let i = 1; i <= count; i++) {
-  if (inverted) {
-    rows.unshift(padRow(i, count));
-  } else {
-    rows.push(padRow(i, count));
+function getAverage(scores) {
+  let sum = 0;
+  for (let i = 0; i < scores.length; i++) {
+    sum += scores[i];
   }
+  return sum / scores.length;
 }
 
-let result = ""
-
-for (const row of rows) {
-  result = result + "\n" + row;
-}
-
-console.log(result);
+console.log(getAverage([92, 88, 12, 77, 57, 100, 67, 38, 97, 89]));
+console.log(getAverage([45, 87, 98, 100, 86, 94, 67, 88, 94, 95]));
