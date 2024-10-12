@@ -7,8 +7,9 @@ function getAverage(scores) {
 
   return sum / scores.length;
 }
+
 function getGrade(score) {
-  if (score == 100) {
+  if (score === 100) {
     return "A++";
   } else if (score >= 90) {
     return "A";
@@ -22,6 +23,12 @@ function getGrade(score) {
     return "F";
   }
 }
-console.log(getGrade(96));
-console.log(getGrade(82));
-console.log(getGrade(56));
+
+function hasPassingGrade(score) {
+  return score >= 60;
+}
+
+
+console.log(hasPassingGrade(100));
+console.log(hasPassingGrade(53));
+console.log(hasPassingGrade(87));
